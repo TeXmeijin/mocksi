@@ -12,7 +12,7 @@
 
 ## 現時点の実行例（最終形ではない）
 ```shell
-npx ts-node main.ts -d ./src/hoge/types.ts
+npx ts-node main.ts -d ./src/hoge
 ```
 
 生成物は以下の通り
