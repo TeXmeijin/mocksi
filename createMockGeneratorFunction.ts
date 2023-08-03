@@ -5,7 +5,7 @@ function createMockGeneratorFunction(typeInfo: { name: string, type: ts.Type }, 
     const properties = typeInfo.type.getProperties();
     let mockFunction = `import { faker } from '@faker-js/faker';\n`;
     mockFunction += `import { ${typeInfo.name} } from './${path.basename(filePath, '.ts')}';\n\n`;
-    mockFunction += `export const createMock${typeInfo.name} = (data: Partial<${typeInfo.name}>) => {\n`;
+    mockFunction += `export const createMock${typeInfo.name}: (data: Partial<${typeInfo.name}>) => ${typeInfo.name} = (data) => {\n`;
     mockFunction += '  return {\n';
     for (const property of properties) {
         const propertyName = property.name;
